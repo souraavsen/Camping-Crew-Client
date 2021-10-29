@@ -1,0 +1,23 @@
+.explore_btn:hover .btn_animation {
+  animation-duration: 4s;
+  animation-name: Animation;
+  animation-iteration-count: infinite;
+}
+
+@keyframes Animation {
+  0% {
+    margin-left: 0%;
+  }
+  25% {
+    margin-left: 6%;
+  }
+  50% {
+    margin-left: 0%;
+  }
+  75% {
+    margin-left: 6%;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}

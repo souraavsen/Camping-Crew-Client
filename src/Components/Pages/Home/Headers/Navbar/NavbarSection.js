@@ -49,21 +49,21 @@ const NavbarSection = () => {
                 className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
                 to='/'
               >
-                Link1
+                My Orders
               </Link>
 
               <Link
                 className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
                 to='/'
               >
-                Link2
+                Manage Orders
               </Link>
 
               <Link
                 className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
                 to='/'
               >
-                Link3
+                Add Services
               </Link>
 
               {user.email && (
