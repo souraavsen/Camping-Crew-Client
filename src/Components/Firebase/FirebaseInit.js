@@ -3,7 +3,7 @@ import firebaseConfig from "./FirebaseConfig"
 
 
 const initAuthentication = () => {
-    // getting configuration from the FirebaseConfig.js file and also initializing app
+    // configuration for the firebase and also initializing app
     initializeApp(firebaseConfig)
 }
 

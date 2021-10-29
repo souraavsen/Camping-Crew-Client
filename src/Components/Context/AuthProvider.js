@@ -5,9 +5,9 @@ export const AuthContext = createContext();
 
 // Using contextapi sharing or providing data as value to access from the other components
 const AuthProvider = ({ children }) => {
-    const allContext = useFirebase();
+    const Contexts = useFirebase();
     return (
-      <AuthContext.Provider value={allContext}>{children}</AuthContext.Provider>
+      <AuthContext.Provider value={Contexts}>{children}</AuthContext.Provider>
     );
 };
 

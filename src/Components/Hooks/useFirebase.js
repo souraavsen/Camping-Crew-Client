@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// all esstional elements for firebase authentication
+// some esstionals from firebase authentication
 import {
   getAuth,
   signInWithPopup,
