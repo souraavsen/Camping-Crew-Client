@@ -6,7 +6,7 @@ import './OfferingServices.css'
 
 const OfferingServices = () => {
   return (
-    <div>
+    <div className="pb-10">
       <div>
         <svg
           className='-mt-24 md:-mt-40 lg:-mt-52'
@@ -30,7 +30,7 @@ const OfferingServices = () => {
           Explore Our Services
         </h4>
         <div className='w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
-         
+          
           <div className='mx-auto'>
             <div>
               <img
@@ -39,17 +39,17 @@ const OfferingServices = () => {
                 alt=''
               />
             </div>
-            <div className='w-60 z-0 px-2 ml-4 pt-40 pb-4 rounded -mt-40 bg-yellow-200 flex flex-col items-center justify-center shadow-md'>
+            <div className='w-60 z-0 px-2 ml-4 pt-40 pb-4 rounded -mt-40 bg-yellow-100 flex flex-col items-center justify-center shadow-md'>
               <h2 className='text-center font-bold text-lg'>Name</h2>
               <h2 className='text-center'>
                 Lorem ipsum dolor sit Lorem ipsum dolor sit amet.
               </h2>
-              <button className='explore_btn mt-1 w-32 font-semibold bg-yellow-300 px-4 py-1'>
+              <button className='explore_btn mt-1 w-28 font-semibold bg-yellow-300  py-1 rounded'>
                 Explore <i class='fas fa-arrow-right btn_animation'></i>
               </button>
             </div>
           </div>
-
+          
           
           <div className='mx-auto'>
             <div>
@@ -59,17 +59,17 @@ const OfferingServices = () => {
                 alt=''
               />
             </div>
-            <div className='w-60 z-0 px-2 ml-4 pt-40 pb-4 rounded -mt-40 bg-yellow-200 flex flex-col items-center justify-center shadow-md'>
+            <div className='w-60 z-0 px-2 ml-4 pt-40 pb-4 rounded -mt-40 bg-yellow-100 flex flex-col items-center justify-center shadow-md'>
               <h2 className='text-center font-bold text-lg'>Name</h2>
               <h2 className='text-center'>
                 Lorem ipsum dolor sit Lorem ipsum dolor sit amet.
               </h2>
-              <button className='explore_btn mt-1 w-32 font-semibold bg-yellow-300 px-4 py-1'>
+              <button className='explore_btn mt-1 w-28 font-semibold bg-yellow-300  py-1 rounded'>
                 Explore <i class='fas fa-arrow-right btn_animation'></i>
               </button>
             </div>
           </div>
-
+          
           
           <div className='mx-auto'>
             <div>
@@ -79,17 +79,16 @@ const OfferingServices = () => {
                 alt=''
               />
             </div>
-            <div className='w-60 z-0 px-2 ml-4 pt-40 pb-4 rounded -mt-40 bg-yellow-200 flex flex-col items-center justify-center shadow-md'>
+            <div className='w-60 z-0 px-2 ml-4 pt-40 pb-4 rounded -mt-40 bg-yellow-100 flex flex-col items-center justify-center shadow-md'>
               <h2 className='text-center font-bold text-lg'>Name</h2>
               <h2 className='text-center'>
                 Lorem ipsum dolor sit Lorem ipsum dolor sit amet.
               </h2>
-              <button className='explore_btn mt-1 w-32 font-semibold bg-yellow-300 px-4 py-1'>
+              <button className='explore_btn mt-1 w-28 font-semibold bg-yellow-300  py-1 rounded'>
                 Explore <i class='fas fa-arrow-right btn_animation'></i>
               </button>
             </div>
           </div>
-
           
           
         </div>
