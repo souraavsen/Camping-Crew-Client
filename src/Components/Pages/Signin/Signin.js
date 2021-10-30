@@ -23,7 +23,7 @@ const Signin = () => {
   };
 
   return (
-    <div className='flex flex-col pt-16 pb-24'>
+    <div className='flex flex-col pt-16 pb-24 mx-4 md:mx-0 lg:mx-0'>
       <form
         class='w-full max-w-lg mx-auto bg-yellow-200 bg-opacity-70 signin_background pb-24 pt-6 px-4 mb-4'
         onSubmit={(e) => {

@@ -47,23 +47,23 @@ const NavbarSection = () => {
 
               <Link
                 className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
-                to='/'
+                to='/all-plans'
               >
-                My Orders
+                All Plans
               </Link>
 
               <Link
                 className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
                 to='/'
               >
-                Manage Orders
+                My Plans
               </Link>
 
               <Link
                 className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
                 to='/'
               >
-                Add Services
+                Manage Plans
               </Link>
 
               {user.email && (
@@ -79,32 +79,32 @@ const NavbarSection = () => {
                 </div>
               )}
             </Nav>
-          </Navbar.Collapse>
 
-          {user.email ? (
-            <Link
-              className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
-              to='/'
-              onClick={googleSignOut}
-            >
-              Sign out
-            </Link>
-          ) : (
-            <div>
-              <Link
-                className='px-3 mr-2 font-semibold py-1 rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
-                to='/signup'
-              >
-                Sign up
-              </Link>
+            {user.email ? (
               <Link
                 className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
-                to='/signin'
+                to='/'
+                onClick={googleSignOut}
               >
-                Sign in
+                Sign out
               </Link>
-            </div>
-          )}
+            ) : (
+              <div>
+                <Link
+                  className='px-3 mr-2 font-semibold py-1 rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
+                  to='/signup'
+                >
+                  Sign up
+                </Link>
+                <Link
+                  className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
+                  to='/signin'
+                >
+                  Sign in
+                </Link>
+              </div>
+            )}
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>

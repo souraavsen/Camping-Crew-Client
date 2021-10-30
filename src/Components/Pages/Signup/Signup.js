@@ -12,7 +12,7 @@ const Signup = () => {
     error,
     setFirstName,
     setLastName,
-    setError
+    setError,
   } = useAuth();
 
   const handleEmailChange = (e) => {
@@ -34,7 +34,7 @@ const Signup = () => {
   };
 
   return (
-    <div className='flex flex-col pt-16 pb-24'>
+    <div className='flex flex-col pt-16 pb-24 mx-4 md:mx-0 lg:mx-0'>
       <form
         class='w-full max-w-lg mx-auto bg-yellow-200 bg-opacity-70 background pb-24 pt-6 px-4 mb-4'
         onSubmit={(e) => {
@@ -44,7 +44,7 @@ const Signup = () => {
         <div className='flex w-11/12 lg:w-full justify-center items-center mb-6 '>
           <h4 className='text-2xl font-bold'>Sign Up</h4>
         </div>
-        
+
         <div class='flex flex-wrap -mx-3 mb-6'>
           <div class='w-11/12 lg:w-full mx-auto md:w-1/2 px-3 mb-6 md:mb-0'>
             <label
