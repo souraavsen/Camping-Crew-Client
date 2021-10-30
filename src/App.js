@@ -10,6 +10,8 @@ import AuthProvider from "./Components/Context/AuthProvider";
 import PlanDetails from "./Components/Pages/PlanDetails/PlanDetails";
 import AllPlans from "./Components/Pages/AllPlans/AllPlans";
 import AddPlans from "./Components/Pages/AllPlans/AddPlans";
+import PrivateRoute from "./Components/Pages/Signin/PrivateRoute/PrivateRoute";
+import Myplans from "./Components/Pages/MyPlans/Myplans";
 
 function App() {
   return (
@@ -18,25 +20,27 @@ function App() {
         <AuthProvider>
           <NavbarSection></NavbarSection>
           <Switch>
-            <Route path='/about'>{/* <About /> */}</Route>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
             <Route path='/signup'>
               <Signup></Signup>
             </Route>
             <Route path='/signin'>
               <Signin></Signin>
             </Route>
-            <Route path='/all-plans'>
+            <PrivateRoute path='/all-plans'>
               <AllPlans></AllPlans>
-            </Route>
-            <Route path='/add-plans'>
+            </PrivateRoute>
+            <PrivateRoute path='/add-plans'>
               <AddPlans></AddPlans>
-            </Route>
-            <Route path='/plans/:id'>
+            </PrivateRoute>
+            <PrivateRoute exact path='/plans/:id'>
               <PlanDetails></PlanDetails>
-            </Route>
-            <Route exact path='/'>
-              <Home></Home>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path='/my-plans'>
+              <Myplans></Myplans>
+            </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>

@@ -1,5 +1,5 @@
 import React from "react";
-import service from "../../../../Images/campsite3.jpg";
+import service from "../../../../Images/campsite15.jpg";
 
 const Activities = () => {
   return (

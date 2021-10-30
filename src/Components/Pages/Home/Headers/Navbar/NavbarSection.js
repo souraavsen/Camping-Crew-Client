@@ -54,7 +54,7 @@ const NavbarSection = () => {
 
               <Link
                 className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
-                to='/'
+                to='/my-plans'
               >
                 My Plans
               </Link>

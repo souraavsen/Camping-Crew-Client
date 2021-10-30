@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import service from "../../../../Images/campsite3.jpg";
+import service from "../../../../Images/campsite15.jpg";
 import './OfferingServices.css'
 import { Link } from "react-router-dom";
 

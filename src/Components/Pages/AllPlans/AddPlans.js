@@ -26,8 +26,7 @@ const AddPlans = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Main State", plandata);
-
+    
     axios
       .post(
         "http://127.0.0.1:5000/add-plans",
@@ -43,6 +42,7 @@ const AddPlans = () => {
             price: "",
           });
         setIfsaved(true);
+        e.target.reset()
         history.push("/all-plans");
       })
       .catch((error) => {
@@ -57,7 +57,7 @@ const AddPlans = () => {
     <div>
       <div className='flex flex-col pt-16 pb-24'>
         <form
-          class='w-full max-w-5xl mx-auto bg-yellow-200 bg-opacity-70 py-6 px-4 mb-4'
+          class='w-11/12 md:w-full max-w-5xl mx-auto bg-yellow-200 bg-opacity-70 py-6 px-4 mb-4'
           onSubmit={(e) => handleSubmit(e)}
         >
           <div className='flex w-11/12 lg:w-full justify-center items-center mb-6 '>
