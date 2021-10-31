@@ -39,14 +39,14 @@ const NavbarSection = () => {
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto my-auto flex justify-around items-center text-gray-50 xs:mt-4 md:mt-0'>
               <Link
-                className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
+                className='mr-4 font-semibold my-2 md:my-0 hover:text-black  text-gray-800'
                 to='/'
               >
                 Home
               </Link>
 
               <Link
-                className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
+                className='mr-4 font-semibold  my-2 md:my-0 hover:text-black  text-gray-800'
                 to='/all-plans'
               >
                 All Plans
@@ -54,14 +54,14 @@ const NavbarSection = () => {
               {user.email && (
                 <>
                   <Link
-                    className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
+                    className='mr-4 font-semibold  my-2 md:my-0 hover:text-black  text-gray-800'
                     to='/my-plans'
                   >
                     My Plans
                   </Link>
 
                   <Link
-                    className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
+                    className='mr-4 font-semibold  my-2 md:my-0 hover:text-black  text-gray-800'
                     to='/manage-bookings'
                   >
                     Manage Plans
@@ -75,16 +75,18 @@ const NavbarSection = () => {
                       width='40px'
                       alt='img'
                     />
-                    <h4 className="text-black">{user.displayName}</h4>
+                    <h4 className='text-black my-2 md:my-0'>
+                      {user.displayName}
+                    </h4>
                   </div>
                 </>
               )}
             </Nav>
 
-            <div className="flex justify-center items-center xs:pt-4 md:pt-0">
+            <div className='flex justify-center items-center xs:pt-4 md:pt-0'>
               {user.email ? (
                 <Link
-                  className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black text-gray-900 bg-gray-500 bg-opacity-20'
+                  className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-2 md:my-0 hover:text-black text-gray-900 bg-gray-500 bg-opacity-20'
                   to='/'
                   onClick={googleSignOut}
                 >
@@ -93,13 +95,13 @@ const NavbarSection = () => {
               ) : (
                 <div>
                   <Link
-                    className='px-3 mr-2 font-semibold py-1 rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
+                    className='px-3 mr-2 font-semibold py-1 rounded-md hover:bg-opacity-30  my-2 md:my-0 hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
                     to='/signup'
                   >
                     Sign up
                   </Link>
                   <Link
-                    className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
+                    className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30  my-2 md:my-0 hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
                     to='/signin'
                   >
                     Sign in

@@ -43,7 +43,7 @@ const Offers = () => {
               <img
                 src={offer.image}
                 alt=''
-                className='w-10 h-10 md:w-16 md:h-16 rounded-full'
+                className='w-10 h-10 border md:w-16 md:h-16 rounded-full'
               />
               <div className='flex justify-center flex-col items-center ml-4'>
                 <Card.Text className='text-yellow-300 md:text-xl font-bold'>
