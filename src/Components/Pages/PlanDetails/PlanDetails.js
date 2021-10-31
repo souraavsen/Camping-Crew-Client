@@ -10,7 +10,7 @@ import axios from "axios";
 const PlanDetails = () => {
   const [planDetails, setPlanDetails] = useState({});
   const [joinflag, setJoinflag] = useState(false);
-  const [joinusers, setJointusers] = useState([]);
+  const [joinusers, setJoinusers] = useState([]);
 
   const [allBookings, setAllBookings] = useState([]);
 
@@ -35,7 +35,7 @@ const PlanDetails = () => {
     fetch(`http://localhost:5000/booking-details/${planId.id}`)
       .then((res) => res.json())
       .then((data) => {
-        setJointusers(data);
+        setJoinusers(data);
       });
   }, []);
 
@@ -46,7 +46,7 @@ const PlanDetails = () => {
     packagename: "",
     contact: "",
     transiction: "",
-    status: "Painding",
+    status: "Pending",
   });
 
   const handleorderdata = (e) => {

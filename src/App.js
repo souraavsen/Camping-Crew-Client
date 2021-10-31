@@ -12,6 +12,7 @@ import AllPlans from "./Components/Pages/AllPlans/AllPlans";
 import AddPlans from "./Components/Pages/AllPlans/AddPlans";
 import PrivateRoute from "./Components/Pages/Signin/PrivateRoute/PrivateRoute";
 import Myplans from "./Components/Pages/MyPlans/Myplans";
+import ManageBooking from "./Components/Pages/ManageBooking/ManageBooking";
 
 function App() {
   return (
@@ -29,9 +30,9 @@ function App() {
             <Route path='/signin'>
               <Signin></Signin>
             </Route>
-            <PrivateRoute path='/all-plans'>
+            <Route path='/all-plans'>
               <AllPlans></AllPlans>
-            </PrivateRoute>
+            </Route>
             <PrivateRoute path='/add-plans'>
               <AddPlans></AddPlans>
             </PrivateRoute>
@@ -40,6 +41,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path='/my-plans'>
               <Myplans></Myplans>
+            </PrivateRoute>
+            <PrivateRoute path='/manage-bookings'>
+              <ManageBooking></ManageBooking>
             </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>

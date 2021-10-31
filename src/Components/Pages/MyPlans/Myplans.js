@@ -39,7 +39,7 @@ const Myplans = () => {
       <h1 className='text-4xl font-bold text-center pb-12 font_architect text-black pt-16'>
         My Joined Plans
       </h1>
-      
+
       <div>
         {!userBooked.length > 0 && (
           <div className='w-full'>
@@ -67,7 +67,7 @@ const Myplans = () => {
             </div>
             <div className='w-4/12 md:ml-24 md:w-2/6 flex justify-between items-center'>
               <div>
-                {booking.status == "Painding" ? (
+                {booking.status == "Pending" ? (
                   <h2 className=' font-semibold text-center px-2 py-1 rounded-full text-white text-xs bg-yellow-700 bg-opacity-60'>
                     {booking.status}
                   </h2>
@@ -77,12 +77,15 @@ const Myplans = () => {
                   </h2>
                 )}
               </div>
-              <button
-                className='ml-8 md:ml-auto text-red-700 px-2 py-0.5 rounded bg-red-400 font-semibold bg-opacity-90 hover:bg-opacity-70'
-                onClick={() => handleDeleteBooking(booking._id)}
-              >
-                X
-              </button>
+              {booking.status == "Pending" && (
+                  <button
+                  className='ml-8 md:ml-auto text-red-700 px-2 py-0.5 rounded bg-red-400 font-semibold bg-opacity-90 hover:bg-opacity-70'
+                  title="Cancel"
+                    onClick={() => handleDeleteBooking(booking._id)}
+                  >
+                    X
+                  </button>
+              )}
             </div>
           </div>
         ))}

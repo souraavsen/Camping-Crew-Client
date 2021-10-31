@@ -37,7 +37,7 @@ const NavbarSection = () => {
           </div>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='ms-auto my-auto flex flex-row justify-around items-center text-gray-50 lg:pt-0 sm:pt-4 xs:pt-4'>
+            <Nav className='ms-auto my-auto flex justify-around items-center text-gray-50 xs:mt-4 md:mt-0'>
               <Link
                 className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
                 to='/'
@@ -51,59 +51,62 @@ const NavbarSection = () => {
               >
                 All Plans
               </Link>
-
-              <Link
-                className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
-                to='/my-plans'
-              >
-                My Plans
-              </Link>
-
-              <Link
-                className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
-                to='/'
-              >
-                Manage Plans
-              </Link>
-
               {user.email && (
-                <div className='flex flex-col md:flex-row justify-center md:justify-between items-center mr-2'>
-                  <img
-                    title={user.displayName}
-                    className='rounded-full mr-2'
-                    src={userimg}
-                    width='40px'
-                    alt='img'
-                  />
-                  {/* <h4 className="text-black">{user.displayName}</h4> */}
-                </div>
+                <>
+                  <Link
+                    className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
+                    to='/my-plans'
+                  >
+                    My Plans
+                  </Link>
+
+                  <Link
+                    className='mr-4 font-semibold my-auto hover:text-black  text-gray-800'
+                    to='/manage-bookings'
+                  >
+                    Manage Plans
+                  </Link>
+
+                  <div className='flex flex-col md:flex-row justify-center md:justify-between items-center mr-2'>
+                    <img
+                      title={user.displayName}
+                      className='rounded-full mr-2'
+                      src={userimg}
+                      width='40px'
+                      alt='img'
+                    />
+                    {/* <h4 className="text-black">{user.displayName}</h4> */}
+                  </div>
+                </>
               )}
             </Nav>
 
-            {user.email ? (
-              <Link
-                className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
-                to='/'
-                onClick={googleSignOut}
-              >
-                Sign out
-              </Link>
-            ) : (
-              <div>
+            <div className="flex justify-center items-center xs:pt-4 md:pt-0">
+              {user.email ? (
                 <Link
-                  className='px-3 mr-2 font-semibold py-1 rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
-                  to='/signup'
+                  className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black text-gray-900 bg-gray-500 bg-opacity-20'
+                  to='/'
+                  onClick={googleSignOut}
                 >
-                  Sign up
+                  Sign out
                 </Link>
-                <Link
-                  className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
-                  to='/signin'
-                >
-                  Sign in
-                </Link>
-              </div>
-            )}
+              ) : (
+                <div>
+                  <Link
+                    className='px-3 mr-2 font-semibold py-1 rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
+                    to='/signup'
+                  >
+                    Sign up
+                  </Link>
+                  <Link
+                    className='px-3 py-1 font-semibold rounded-md hover:bg-opacity-30 my-auto hover:text-black  text-gray-900 bg-gray-500 bg-opacity-20'
+                    to='/signin'
+                  >
+                    Sign in
+                  </Link>
+                </div>
+              )}
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
