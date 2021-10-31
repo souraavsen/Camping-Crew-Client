@@ -30,7 +30,7 @@ const NavbarSection = () => {
             <img src={logo} className='mr-2' width='60px' alt='' />
             <Navbar.Brand
               className='font_architect font-semibold text-2xl'
-              href='#home'
+              href='/'
             >
               Camping Crew
             </Navbar.Brand>
