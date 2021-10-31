@@ -109,7 +109,6 @@ const PlanDetails = () => {
         <img
           className='rounded-md shadow-md md:w-1/2'
           src={planDetails.image ? planDetails.image : img}
-          // width='40%'
           alt=''
         />
         <div className='md:ml-20'>

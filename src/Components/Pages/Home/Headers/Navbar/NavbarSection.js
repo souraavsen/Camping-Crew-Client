@@ -75,7 +75,7 @@ const NavbarSection = () => {
                       width='40px'
                       alt='img'
                     />
-                    {/* <h4 className="text-black">{user.displayName}</h4> */}
+                    <h4 className="text-black">{user.displayName}</h4>
                   </div>
                 </>
               )}

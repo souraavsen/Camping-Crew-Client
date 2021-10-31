@@ -38,21 +38,21 @@ const Booking = ({ plan, deleteSingleBooking, handelUpdatesStatus }) => {
               </p>
               <p className='text-base py-1'>Contact: {plan.contact}</p>
               <p className='text-base py-1'>{plan.transiction}</p>
-              {plan.status == "Pending" ? (
+              {plan.status === "Pending" ? (
                 <h2 className='font-semibold text-center w-24 mx-auto py-2 my-1 rounded-full text-white text-xs bg-yellow-700 bg-opacity-60'>
                   {plan.status}
                 </h2>
               ) : (
-                <h2 className='font-semibold text-center w-24 mx-auto py-2 my-1 rounded-full text-white text-xs bg-green-600 bg-opacity-60'>
+                <h2 className='font-semibold text-center w-24 mx-auto py-2 my-1 rounded-full text-white text-xs bg-green-700 bg-opacity-60'>
                   {plan.status}
                 </h2>
               )}
             </div>
           </div>
-          {plan.status == "Pending" && (
+          {plan.status === "Pending" && (
             <div className='bg-transparent flex justify-around items-center pt-3'>
               <button
-                className='bg-green-200 border-2 border-green-300 text-lg px-6 py-1 mx-auto mb-6 rounded-full cursor-pointer hover:bg-transparent font-light text-green-600'
+                className='bg-yellow-200 border-2 border-yellow-300 text-lg px-6 py-1 mx-auto mb-6 rounded-full cursor-pointer hover:bg-transparent font-light text-yellow-500'
                 title='Accept'
                 onClick={() => handelUpdatesStatus(plan._id)}
               >

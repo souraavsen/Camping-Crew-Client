@@ -4,12 +4,14 @@ import service from "../../../Images/campsite15.jpg";
 
 const AllPlans = () => {
   const [allplans, setAllPlans] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`http://127.0.0.1:5000/all-plans`)
       .then((res) => res.json())
       .then((data) => {
         setAllPlans(data);
+        setLoading(false);
       });
   }, []);
 
@@ -19,12 +21,33 @@ const AllPlans = () => {
         <h4 className='text-3xl text-black pb-16 font-extrabold text-center font_architect '>
           Our Plans
         </h4>
+
+        {loading && (
+          <div class='sk-cube-grid'>
+            <div class='sk-cube sk-cube1'></div>
+            <div class='sk-cube sk-cube2'></div>
+            <div class='sk-cube sk-cube3'></div>
+            <div class='sk-cube sk-cube4'></div>
+            <div class='sk-cube sk-cube5'></div>
+            <div class='sk-cube sk-cube6'></div>
+            <div class='sk-cube sk-cube7'></div>
+            <div class='sk-cube sk-cube8'></div>
+            <div class='sk-cube sk-cube9'></div>
+          </div>
+        )}
+
         <div className='w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 '>
-          <Link to='/add-plans' className='mx-auto flex justify-center items-center text-black'>
-            <div className='w-40 h-40 z-0 p-4 rounded border border-black border-dashed bg-yellow-100 bg-opacity-60 flex flex-col justify-center items-center shadow-md'>
-              <h2 className='text-center font-bold text-5xl'>+</h2>
-            </div>
-          </Link>
+          {!loading && (
+            <Link
+              to='/add-plans'
+              className='mx-auto flex justify-center items-center text-black'
+              title='Add Plan'
+            >
+              <div className='w-40 h-40 z-0 p-4 rounded border border-black border-dashed bg-yellow-100 bg-opacity-60 flex flex-col justify-center items-center shadow-md'>
+                <h2 className='text-center font-bold text-5xl'>+</h2>
+              </div>
+            </Link>
+          )}
 
           {allplans.map((eachplan) => (
             <div className='mx-auto' key={eachplan._id}>

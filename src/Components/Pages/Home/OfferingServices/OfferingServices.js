@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import service from "../../../../Images/campsite15.jpg";
-import './OfferingServices.css'
+import "./OfferingServices.css";
 import { Link } from "react-router-dom";
 
-
 const OfferingServices = () => {
-
-  const [plans, setPlans] = useState([])
+  const [plans, setPlans] = useState([]);
   const [activities, setActivities] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`http://127.0.0.1:5000/all-plans`)
@@ -15,16 +14,16 @@ const OfferingServices = () => {
       .then((data) => {
         setPlans(data);
       });
-  }, [])
+  }, []);
 
   useEffect(() => {
     fetch(`http://127.0.0.1:5000/all-activities`)
       .then((res) => res.json())
       .then((data) => {
         setActivities(data);
+        setLoading(false);
       });
-  }, [])
-
+  }, []);
 
   return (
     <div className='pb-10'>
@@ -48,6 +47,20 @@ const OfferingServices = () => {
         <h4 className='text-3xl text-black pb-16 font-extrabold text-center font_architect '>
           Explore Our Plans
         </h4>
+
+        {loading && (
+          <div class='sk-cube-grid'>
+            <div class='sk-cube sk-cube1'></div>
+            <div class='sk-cube sk-cube2'></div>
+            <div class='sk-cube sk-cube3'></div>
+            <div class='sk-cube sk-cube4'></div>
+            <div class='sk-cube sk-cube5'></div>
+            <div class='sk-cube sk-cube6'></div>
+            <div class='sk-cube sk-cube7'></div>
+            <div class='sk-cube sk-cube8'></div>
+            <div class='sk-cube sk-cube9'></div>
+          </div>
+        )}
         <div className='w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
           {plans.map((plan) => (
             <div className='mx-auto' key={plan._id}>
@@ -72,6 +85,18 @@ const OfferingServices = () => {
               </div>
             </div>
           ))}
+
+          {!loading && (
+            <Link
+              to='/add-plans'
+              className='mx-auto flex justify-center items-center text-black'
+              title='Add Plan'
+            >
+              <div className='w-40 h-40 z-0 p-4 rounded border border-black border-dashed bg-yellow-100 bg-opacity-60 flex flex-col justify-center items-center shadow-md'>
+                <h2 className='text-center font-bold text-5xl'>+</h2>
+              </div>
+            </Link>
+          )}
         </div>
       </div>
     </div>
