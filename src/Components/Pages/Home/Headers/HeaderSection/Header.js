@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import headerimage from "../../../../../Images/camping-crew-header.png";
 import "./Header.css";
 
@@ -13,7 +14,7 @@ const Header = () => {
             “Wander Often, Wonder Always”
           </h5>
         </div>
-        <button className='header_button mt-6'>Let's Join</button>
+        <Link to="/all-plans" className='header_button mt-6'>Let's Join</Link>
       </div>
       <div className='-mt-4 z-0'>
       </div>

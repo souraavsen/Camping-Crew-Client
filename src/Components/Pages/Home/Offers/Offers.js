@@ -7,7 +7,7 @@ const Offers = () => {
   const [loading, setLoading] = useState(true)
   
   useEffect(() => {
-    fetch(`http://localhost:5000/all-offers`)
+    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-offers`)
       .then((res) => res.json())
       .then((data) => {
         setOffers(data);
@@ -39,7 +39,7 @@ const Offers = () => {
 
         <div className='mx-16 px-8 py-16 grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:gap-14 justify-between items-center'>
           {offers.map((offer) => (
-            <div className='flex justify-start mb-4 py-2 items-center border-b'>
+            <div className='flex justify-start mb-4 py-2 items-center border-b-2'>
               <img
                 src={offer.image}
                 alt=''

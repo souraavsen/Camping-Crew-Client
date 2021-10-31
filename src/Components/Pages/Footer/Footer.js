@@ -3,7 +3,7 @@ import footerimg from "../../../Images/camping-crew-header.png";
 
 const Footer = () => {
   return (
-    <div className='bg-gray-900 pt-8'>
+    <div className='bg-gray-900 pt-8 flex flex-col justify-center items-center'>
       <div className='container md:flex justify-around align-center py-3'>
         <div className='px-3 px-lg-0'>
           <div>
@@ -24,7 +24,6 @@ const Footer = () => {
               <i className='fas fa-phone-alt mr-3 text-white'></i>01761023894
             </p>
           </div>
-          <hr />
           <div className='flex flex-col justify-center items-center md:items-start text-lg my-4'>
             <div className='flex items-center justify-center py-2'>
               <i class='fab fa-facebook text-yellow-300 text-3xl cursor-pointer'></i>

@@ -10,7 +10,7 @@ const AddPlans = () => {
     name: "",
     description: "",
     image: "",
-    day: "",
+    date: "",
     duration: "",
     price: "",
   });
@@ -29,7 +29,7 @@ const AddPlans = () => {
     
     axios
       .post(
-        "http://127.0.0.1:5000/add-plans",
+        "https://bloodcurdling-warlock-64846.herokuapp.com/add-plans",
         plandata)
       .then((res) => {
         console.log(res);
@@ -37,7 +37,7 @@ const AddPlans = () => {
             name: "",
             description: "",
             image: "",
-            day: "",
+            date: "",
             duration: "",
             price: "",
           });
@@ -96,7 +96,7 @@ const AddPlans = () => {
                 id='description'
                 onChange={(e) => handlePlanData(e)}
               >
-                {(ifsaved ? "" : plandata.description)}
+                {ifsaved ? "" : plandata.description}
               </textarea>
             </div>
 
@@ -127,8 +127,8 @@ const AddPlans = () => {
               <input
                 class='block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
                 type='text'
-                id='day'
-                value={plandata.day}
+                id='date'
+                value={plandata.date}
                 placeholder='Start date - End date'
                 onChange={(e) => handlePlanData(e)}
               />

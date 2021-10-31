@@ -6,7 +6,7 @@ const Activities = () => {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/all-activities`)
+    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-activities`)
       .then((res) => res.json())
       .then((data) => {
         setActivities(data);
