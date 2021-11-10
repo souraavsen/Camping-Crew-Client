@@ -29,7 +29,7 @@ const NavbarSection = () => {
           <div className='flex justify-center items-center'>
             <img src={logo} className='mr-2' width='60px' alt='' />
             <Navbar.Brand
-              className='font_architect font-semibold text-2xl'
+              className='font_architect font-semibold text-xl md:text-2xl'
               href='/'
             >
               Camping Crew

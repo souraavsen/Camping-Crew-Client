@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 import image from "../../../Images/campsite15.jpg";
 
 const Booking = ({ plan, deleteSingleBooking, handelUpdatesStatus }) => {
-
   const [planDetails, setPlanDetails] = useState({});
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/plan-details/${plan.package_id}`)
+    fetch(
+      `https://bloodcurdling-warlock-64846.herokuapp.com/plan-details/${plan.package_id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setPlanDetails(data);
       });
   }, []);
-
 
   return (
     <div>
@@ -49,8 +49,8 @@ const Booking = ({ plan, deleteSingleBooking, handelUpdatesStatus }) => {
               )}
             </div>
           </div>
-          {plan.status === "Pending" && (
-            <div className='bg-transparent flex justify-around items-center pt-3'>
+          <div className='bg-transparent flex justify-around items-center pt-3'>
+            {plan.status === "Pending" && (
               <button
                 className='bg-yellow-200 border-2 border-yellow-300 text-lg px-6 py-1 mx-auto mb-6 rounded-full cursor-pointer hover:bg-transparent font-light text-yellow-500'
                 title='Accept'
@@ -58,15 +58,15 @@ const Booking = ({ plan, deleteSingleBooking, handelUpdatesStatus }) => {
               >
                 <i class='fas fa-check'></i>
               </button>
-              <button
-                className='bg-red-200 border-2 border-red-300 text-lg px-7 py-1 mx-auto mb-6 rounded-full cursor-pointer hover:bg-transparent text-red-600 font-extrabold'
-                onClick={() => deleteSingleBooking(plan._id)}
-                title='Cancel'
-              >
-                X
-              </button>
-            </div>
-          )}
+            )}
+            <button
+              className='bg-red-200 border-2 border-red-300 text-lg px-7 py-1 mx-auto mb-6 rounded-full cursor-pointer hover:bg-transparent text-red-600 font-extrabold'
+              onClick={() => deleteSingleBooking(plan._id)}
+              title='Cancel'
+            >
+              X
+            </button>
+          </div>
         </div>
       </div>
     </div>

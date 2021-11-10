@@ -32,7 +32,7 @@ const OfferingServices = () => {
     <div className='pb-10'>
       <div>
         <svg
-          className='-mt-24 md:-mt-40 lg:-mt-52 '
+          className='-mt-16 md:-mt-40 lg:-mt-52 '
           id='visual'
           viewBox='0 0 900 200'
           xmlns='http://www.w3.org/2000/svg'
