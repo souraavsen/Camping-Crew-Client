@@ -6,6 +6,7 @@ import useAuth from "../../../Hooks/useAuth";
 
 const OfferingServices = () => {
   const [plans, setPlans] = useState([]);
+  // const [reversed, setReversed] = useState([]);
   const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -15,7 +16,7 @@ const OfferingServices = () => {
     fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-plans`)
       .then((res) => res.json())
       .then((data) => {
-        setPlans(data);
+        setPlans(data.reverse().slice(0,8));
       });
   }, []);
 
@@ -28,11 +29,12 @@ const OfferingServices = () => {
       });
   }, []);
 
+
   return (
     <div className='pb-10'>
       <div>
         <svg
-          className='-mt-16 md:-mt-40 lg:-mt-52 '
+          className='-mt-16 md:-mt-40 lg:-mt-56 2xl:-mt-80'
           id='visual'
           viewBox='0 0 900 200'
           xmlns='http://www.w3.org/2000/svg'
@@ -64,7 +66,7 @@ const OfferingServices = () => {
             <div class='sk-cube sk-cube9'></div>
           </div>
         ) : (
-          <div className='w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+          <div className='w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12'>
             {plans.map((plan) => (
               <div className='mx-auto' key={plan._id}>
                 <div>

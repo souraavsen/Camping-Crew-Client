@@ -14,9 +14,7 @@ const Header = () => {
             “Wander Often, Wonder Always”
           </h5>
         </div>
-        <Link to="/all-plans" className='header_button mt-6'>Let's Join</Link>
-      </div>
-      <div className='-mt-4 z-0'>
+        <Link to="/all-plans" className='header_button mt-6 hover:text-black'>Let's Join</Link>
       </div>
     </div>
   );

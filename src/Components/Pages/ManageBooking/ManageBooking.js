@@ -20,9 +20,12 @@ const ManageBooking = () => {
   const deleteSingleBooking = (id) => {
     const permission = window.confirm("Are you sure want to cancel ?");
     if (permission) {
-      fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/remove-booking/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://bloodcurdling-warlock-64846.herokuapp.com/remove-booking/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setRerender(!rerender);
@@ -30,15 +33,21 @@ const ManageBooking = () => {
     }
   };
 
-  const data = {status:"Accepted"}
+  const data = { status: "Accepted" };
 
   const handelUpdatesStatus = (id) => {
-    const permission = window.confirm("Do you want to accept the reservation ?");
+    const permission = window.confirm(
+      "Do you want to accept the reservation ?"
+    );
     if (permission) {
-      axios.put(`https://bloodcurdling-warlock-64846.herokuapp.com/booking/update/${id}`, data)
+      axios
+        .put(
+          `https://bloodcurdling-warlock-64846.herokuapp.com/booking/update/${id}`,
+          data
+        )
         .then((res) => {
           console.log(res);
-           setRerender(!rerender);
+          setRerender(!rerender);
         });
     }
   };
@@ -51,16 +60,27 @@ const ManageBooking = () => {
         </h2>
 
         {loading && (
-          <div class='sk-cube-grid'>
-            <div class='sk-cube sk-cube1'></div>
-            <div class='sk-cube sk-cube2'></div>
-            <div class='sk-cube sk-cube3'></div>
-            <div class='sk-cube sk-cube4'></div>
-            <div class='sk-cube sk-cube5'></div>
-            <div class='sk-cube sk-cube6'></div>
-            <div class='sk-cube sk-cube7'></div>
-            <div class='sk-cube sk-cube8'></div>
-            <div class='sk-cube sk-cube9'></div>
+          <div className='min-h-screen'>
+            <div class='sk-cube-grid'>
+              <div class='sk-cube sk-cube1'></div>
+              <div class='sk-cube sk-cube2'></div>
+              <div class='sk-cube sk-cube3'></div>
+              <div class='sk-cube sk-cube4'></div>
+              <div class='sk-cube sk-cube5'></div>
+              <div class='sk-cube sk-cube6'></div>
+              <div class='sk-cube sk-cube7'></div>
+              <div class='sk-cube sk-cube8'></div>
+              <div class='sk-cube sk-cube9'></div>
+            </div>
+          </div>
+        )}
+        {!bookedPlans.length > 0 && (
+          <div className='min-h-screen -mb-96'>
+            <img
+              className='m-auto w-60'
+              src='https://i.ibb.co/KNy4Yp0/empty-data-set.jpg'
+              alt=''
+            />
           </div>
         )}
 

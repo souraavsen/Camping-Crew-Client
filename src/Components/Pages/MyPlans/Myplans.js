@@ -42,25 +42,27 @@ const Myplans = () => {
       </h1>
 
       {loading && (
-        <div class='sk-cube-grid'>
-          <div class='sk-cube sk-cube1'></div>
-          <div class='sk-cube sk-cube2'></div>
-          <div class='sk-cube sk-cube3'></div>
-          <div class='sk-cube sk-cube4'></div>
-          <div class='sk-cube sk-cube5'></div>
-          <div class='sk-cube sk-cube6'></div>
-          <div class='sk-cube sk-cube7'></div>
-          <div class='sk-cube sk-cube8'></div>
-          <div class='sk-cube sk-cube9'></div>
+        <div className='min-h-screen'>
+          <div class='sk-cube-grid'>
+            <div class='sk-cube sk-cube1'></div>
+            <div class='sk-cube sk-cube2'></div>
+            <div class='sk-cube sk-cube3'></div>
+            <div class='sk-cube sk-cube4'></div>
+            <div class='sk-cube sk-cube5'></div>
+            <div class='sk-cube sk-cube6'></div>
+            <div class='sk-cube sk-cube7'></div>
+            <div class='sk-cube sk-cube8'></div>
+            <div class='sk-cube sk-cube9'></div>
+          </div>
         </div>
       )}
 
       {!loading && (
         <div>
           {!userBooked.length > 0 && (
-            <div className='w-full'>
+            <div className='min-h-screen -mb-96'>
               <img
-                className='mx-auto w-52'
+                className='m-auto w-60'
                 src='https://i.ibb.co/KNy4Yp0/empty-data-set.jpg'
                 alt=''
               />

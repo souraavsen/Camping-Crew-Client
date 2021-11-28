@@ -67,18 +67,40 @@ const NavbarSection = () => {
                     Manage Plans
                   </Link>
 
-                  <div className='flex flex-col md:flex-row justify-center md:justify-between items-center mr-2'>
-                    <img
-                      title={user.displayName}
-                      className='rounded-full mr-2'
-                      src={userimg}
-                      width='40px'
-                      alt='img'
-                    />
-                    <h4 className='text-black my-2 md:my-0'>
-                      {user.displayName}
-                    </h4>
-                  </div>
+                  <Nav.Link className='flex flex-col md:flex-row justify-center md:justify-between items-center mr-2'>
+                    <div class='dropdown'>
+                      <img
+                        title={user?.displayName}
+                        className='rounded-full mr-2'
+                        src={userimg}
+                        width='40px'
+                        alt='img'
+                        type='button'
+                        id='dropdownMenu2'
+                        data-toggle='dropdown'
+                        aria-haspopup='true'
+                        aria-expanded='false'
+                      />
+                      <div
+                        class='dropdown-menu dropdown-menu-right py-2 mt-2 shadow-sm bg-yellow-100 bg-opacity-80 backdrop-filter backdrop-blur-md'
+                        aria-labelledby='dropdownMenu2'
+                      >
+                        <button
+                          class='dropdown-item font-extrabold'
+                          type='button'
+                        >
+                          {user?.displayName}
+                        </button>
+                        <button class='dropdown-item' type='button'>
+                          Settings
+                        </button>
+                        <hr></hr>
+                        <button class='dropdown-item' type='button'>
+                          Help
+                        </button>
+                      </div>
+                    </div>
+                  </Nav.Link>
                 </>
               )}
             </Nav>
