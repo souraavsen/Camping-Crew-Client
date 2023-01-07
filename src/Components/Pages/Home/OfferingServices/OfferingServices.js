@@ -13,22 +13,21 @@ const OfferingServices = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-plans`)
+    fetch(`https://camping-crew.onrender.com/all-plans`)
       .then((res) => res.json())
       .then((data) => {
-        setPlans(data.reverse().slice(0,8));
+        setPlans(data.reverse().slice(0, 8));
       });
   }, []);
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-activities`)
+    fetch(`https://camping-crew.onrender.com/all-activities`)
       .then((res) => res.json())
       .then((data) => {
         setActivities(data);
         setLoading(false);
       });
   }, []);
-
 
   return (
     <div className='pb-10'>

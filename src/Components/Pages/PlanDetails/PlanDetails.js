@@ -25,7 +25,7 @@ const PlanDetails = () => {
   const packageIdref = useRef();
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/plan-details/${planId.id}`)
+    fetch(`https://camping-crew.onrender.com/plan-details/${planId.id}`)
       .then((res) => res.json())
       .then((data) => {
         setPlanDetails(data);
@@ -33,7 +33,7 @@ const PlanDetails = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/booking-details/${planId.id}`)
+    fetch(`https://camping-crew.onrender.com/booking-details/${planId.id}`)
       .then((res) => res.json())
       .then((data) => {
         setJoinusers(data);
@@ -64,7 +64,7 @@ const PlanDetails = () => {
     e.preventDefault();
 
     axios
-      .post("https://bloodcurdling-warlock-64846.herokuapp.com/add-booking", orderdata)
+      .post("https://camping-crew.onrender.com/add-booking", orderdata)
       .then((res) => {
         e.target.reset();
         setOrderdata({
@@ -85,7 +85,7 @@ const PlanDetails = () => {
   };
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-bookings`)
+    fetch(`https://camping-crew.onrender.com/all-bookings`)
       .then((res) => res.json())
       .then((data) => {
         setAllBookings(data);
@@ -100,7 +100,7 @@ const PlanDetails = () => {
 
   return (
     <div className='pt-12 pb-24'>
-      {loading ?  (
+      {loading ? (
         <div className='min-h-screen'>
           <div class='sk-cube-grid'>
             <div class='sk-cube sk-cube1'></div>
@@ -114,52 +114,52 @@ const PlanDetails = () => {
             <div class='sk-cube sk-cube9'></div>
           </div>
         </div>
-      ):(
-      <>
-        <h1 className='text-4xl font-bold text-center pb-12 font_architect'>
-          {planDetails.name}
-        </h1>
-        <div className='container lg:flex md:flex justify-between px-8 py-6'>
-          <img
-            className='rounded-md shadow-md md:w-1/2'
-            src={planDetails.image ? planDetails.image : img}
-            alt=''
-          />
-          <div className='md:ml-20'>
-            <h4 className='text-justify py-6'>{planDetails.description}</h4>
-            <div className='flex items-center pb-4'>
-              <h4 className='pr-8 border-r-2 border-gray-400'>
-                {planDetails.date}
+      ) : (
+        <>
+          <h1 className='text-4xl font-bold text-center pb-12 font_architect'>
+            {planDetails.name}
+          </h1>
+          <div className='container lg:flex md:flex justify-between px-8 py-6'>
+            <img
+              className='rounded-md shadow-md md:w-1/2'
+              src={planDetails.image ? planDetails.image : img}
+              alt=''
+            />
+            <div className='md:ml-20'>
+              <h4 className='text-justify py-6'>{planDetails.description}</h4>
+              <div className='flex items-center pb-4'>
+                <h4 className='pr-8 border-r-2 border-gray-400'>
+                  {planDetails.date}
+                </h4>
+                <h4 className='pl-8'>{planDetails.duration} Days</h4>
+              </div>
+              <h4>
+                Price:{" "}
+                <span className='text-lg text-yellow-900 font-semibold'>
+                  {planDetails.price}$
+                </span>{" "}
+                only
               </h4>
-              <h4 className='pl-8'>{planDetails.duration} Days</h4>
-            </div>
-            <h4>
-              Price:{" "}
-              <span className='text-lg text-yellow-900 font-semibold'>
-                {planDetails.price}$
-              </span>{" "}
-              only
-            </h4>
-            <div className='flex justify-center items-center'>
-              {ifPlan.length > 0 ? (
-                <button
-                  className='py-1 text-black font-semibold mx-auto text-lg px-4 bg-yellow-200 cursor-default bg-opacity-60 mt-16 mb-4 rounded'
-                  disabled
-                >
-                  Thanks For Joining Us
-                </button>
-              ) : (
-                <button
-                  className='py-1 text-black font-semibold mx-auto text-lg px-4 bg-yellow-400 hover:bg-opacity-70 bg-opacity-60 mt-16 mb-4 rounded shadow-sm'
-                  onClick={() => setJoinflag(!joinflag)}
-                >
-                  Join Us
-                </button>
-              )}
+              <div className='flex justify-center items-center'>
+                {ifPlan.length > 0 ? (
+                  <button
+                    className='py-1 text-black font-semibold mx-auto text-lg px-4 bg-yellow-200 cursor-default bg-opacity-60 mt-16 mb-4 rounded'
+                    disabled
+                  >
+                    Thanks For Joining Us
+                  </button>
+                ) : (
+                  <button
+                    className='py-1 text-black font-semibold mx-auto text-lg px-4 bg-yellow-400 hover:bg-opacity-70 bg-opacity-60 mt-16 mb-4 rounded shadow-sm'
+                    onClick={() => setJoinflag(!joinflag)}
+                  >
+                    Join Us
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </>
+        </>
       )}
       {/* Joining Form */}
       {joinflag && (

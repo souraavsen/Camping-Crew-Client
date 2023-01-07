@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 
 const Activities = () => {
-
   const [loading, setLoading] = useState(true);
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-activities`)
+    fetch(`https://camping-crew.onrender.com/all-activities`)
       .then((res) => res.json())
       .then((data) => {
         setActivities(data);
         setLoading(false);
       });
   }, []);
-
 
   return (
     <div className='pt-4 pb-20 '>

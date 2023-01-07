@@ -29,7 +29,7 @@ const AddPlans = () => {
     
     axios
       .post(
-        "https://bloodcurdling-warlock-64846.herokuapp.com/add-plans",
+        "https://camping-crew.onrender.com/add-plans",
         plandata)
       .then((res) => {
         console.log(res);

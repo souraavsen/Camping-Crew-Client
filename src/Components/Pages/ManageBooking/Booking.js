@@ -5,9 +5,7 @@ const Booking = ({ plan, deleteSingleBooking, handelUpdatesStatus }) => {
   const [planDetails, setPlanDetails] = useState({});
 
   useEffect(() => {
-    fetch(
-      `https://bloodcurdling-warlock-64846.herokuapp.com/plan-details/${plan.package_id}`
-    )
+    fetch(`https://camping-crew.onrender.com/plan-details/${plan.package_id}`)
       .then((res) => res.json())
       .then((data) => {
         setPlanDetails(data);

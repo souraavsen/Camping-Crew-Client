@@ -3,18 +3,17 @@ import { Card } from "react-bootstrap";
 import "./Offers.css";
 
 const Offers = () => {
-  const [offers, setOffers] = useState([])
-  const [loading, setLoading] = useState(true)
-  
+  const [offers, setOffers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-offers`)
+    fetch(`https://camping-crew.onrender.com/all-offers`)
       .then((res) => res.json())
       .then((data) => {
         setOffers(data);
-        setLoading(false)
+        setLoading(false);
       });
   }, []);
-
 
   return (
     <div>

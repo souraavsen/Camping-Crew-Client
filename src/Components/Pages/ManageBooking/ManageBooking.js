@@ -9,7 +9,7 @@ const ManageBooking = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-bookings`)
+    fetch(`https://camping-crew.onrender.com/all-bookings`)
       .then((res) => res.json())
       .then((data) => {
         setBookedPlans(data);
@@ -20,12 +20,9 @@ const ManageBooking = () => {
   const deleteSingleBooking = (id) => {
     const permission = window.confirm("Are you sure want to cancel ?");
     if (permission) {
-      fetch(
-        `https://bloodcurdling-warlock-64846.herokuapp.com/remove-booking/${id}`,
-        {
-          method: "DELETE",
-        }
-      )
+      fetch(`https://camping-crew.onrender.com/remove-booking/${id}`, {
+        method: "DELETE",
+      })
         .then((res) => res.json())
         .then((data) => {
           setRerender(!rerender);
@@ -41,10 +38,7 @@ const ManageBooking = () => {
     );
     if (permission) {
       axios
-        .put(
-          `https://bloodcurdling-warlock-64846.herokuapp.com/booking/update/${id}`,
-          data
-        )
+        .put(`https://camping-crew.onrender.com/booking/update/${id}`, data)
         .then((res) => {
           console.log(res);
           setRerender(!rerender);

@@ -10,7 +10,7 @@ const AllPlans = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`https://bloodcurdling-warlock-64846.herokuapp.com/all-plans`)
+    fetch(`https://camping-crew.onrender.com/all-plans`)
       .then((res) => res.json())
       .then((data) => {
         setAllPlans(data);
